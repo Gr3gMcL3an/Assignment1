@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab3 Part C</title>
+
+    <style>
+
+        input:focus {
+            background-color: yellow;
+            font-style: italic;
+
+        }
+
+        #check{
+            color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<form id="form" name="myform" method="post" action="partC.html" onsubmit = "return validate()">
+First name <input type="text" name="fName" id="idFName"/>
+    <p/>
+    Last Name <input type="text" name="fName" id="idLName"/>
+    <p/>
+    Address 1 <input type="text" name="add1" id="idAdd1"/>
+    <p/>
+    Address 2 <input type="text" name="add2" id="idAdd2"/>
+    <p/>
+    Email <input type="text" name="email" id="idEmail"/>
+
+</form>
+<p/>
+Accept Terms and Conditions: <input type="checkbox" id="myCheck"> <span id ='check'>You must accept the terms and conditions</span>
+
+<p/>
+
+<button onclick="validate()">Submit</button>
+
+<p id="demo"></p>
+
+<script>
+
+  var  test = document.getElementById('check').style.display = 'none';
+
+    function validate() {
+
+
+
+        var isChecked = document.getElementById('myCheck').checked;
+        if(!(isChecked))
+        {
+       test = document.getElementById('check').style.display = 'inline';
+            return false;
+        }
+
+
+       var email = document.getElementById("idEmail")
+        if (email.value.length == 0)
+        {
+            email.style.borderColor="#FF0000";
+            return false;
+        }
+
+        var last = document.getElementById("idLName")
+        if (last.value.length == 0)
+        {
+            last.style.borderColor="#FF0000";
+            return false;
+        }
+
+        var first = document.getElementById("idFName")
+        if (first.value.length == 0)
+        {
+            first.style.borderColor="#FF0000";
+            return false;
+        }
+
+        var addOne = document.getElementById("idAdd1")
+        if (addOne.value.length == 0)
+        {
+            addOne.style.borderColor="#FF0000";
+            return false;
+        }
+
+        var add2 = document.getElementById("idAdd2")
+        if (add2.value.length == 0)
+        {
+            add2.style.borderColor="#FF0000";
+            return false;
+        }
+
+
+        document.getElementById("demo").innerHTML = x;
+
+       // document.getElementById('idEmail').style.border = "solid 1px red";
+
+
+    }
+
+</script>
+
+
+</body>
+</html>
+
